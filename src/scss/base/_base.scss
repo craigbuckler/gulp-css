@@ -1,0 +1,20 @@
+// Base styles
+:root {
+  font-size: $font-size-rwd;
+}
+
+body {
+  font-family: $font-main;
+  font-size: $font-size;
+  font-weight: 300;
+  line-height: 1.2;
+  @include reset;
+  color: $color-text;
+  background-color: $color-back;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 1.5em 0;
+}

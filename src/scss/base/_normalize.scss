@@ -1,0 +1,17 @@
+// Normalize styles
+
+// border-box by default
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// HTML5 block elements
+article,
+aside,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}

@@ -1,0 +1,26 @@
+// icon list
+.iconlist {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  @include reset;
+}
+
+.iconlist > * {
+  max-width: 7em;
+  font-weight: 500;
+  text-align: center;
+  padding: 7em 0 0 0;
+  margin: 1em;
+  background: inline('icons/fast.svg') 50% 0 no-repeat;
+  background-size: contain;
+}
+
+.reload {
+  background-image: inline('icons/reload.svg');
+}
+
+.alert {
+  background-image: inline('icons/alert.svg');
+}

@@ -1,0 +1,30 @@
+// CSS Grid layout
+
+main {
+  max-width: 44em;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+@supports (display: grid) {
+
+  main {
+    max-width: none;
+    @include reset;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns:
+      [full-start] minmax(2em, 1fr)
+      [main-start] minmax(10em, 40em) [main-end]
+      minmax(2em, 1fr) [full-end];
+  }
+
+  main > * {
+    grid-column: main;
+  }
+
+  main > .full {
+    grid-column: full;
+  }
+
+}
