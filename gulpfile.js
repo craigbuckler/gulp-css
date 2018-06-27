@@ -80,16 +80,21 @@
 
   };
 
-  // minify production CSS
+  // remove unused selectors and minify production CSS
   if (!devBuild) {
-    cssConfig.postCSS.push(require('cssnano'));
+
+    cssConfig.postCSS.push(
+      require('usedcss')({ html: ['index.html'] }),
+      require('cssnano')
+    );
+
   }
 
   gulp.task('css', ['images'], () =>
 
     gulp.src(cssConfig.src)
       .pipe(sourcemaps ? sourcemaps.init() : noop())
-      .pipe(sass(cssConfig.sassOpts))
+      .pipe(sass(cssConfig.sassOpts).on('error', sass.logError))
       .pipe(postcss(cssConfig.postCSS))
       .pipe(sourcemaps ? sourcemaps.write() : noop())
       .pipe(size({ showFiles:true }))

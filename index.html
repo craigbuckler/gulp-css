@@ -26,16 +26,95 @@
 
       <h1>Using Gulp.js for CSS tasks</h1>
 
+      <p><a href="https://gulpjs.com/">Gulp.js</a> is a Node.js task runner which can aid your CSS workflow:</p>
+
       <ul class="iconlist">
         <li class="fast">quicker development</li>
         <li class="reload">instant reloading</li>
         <li class="alert">fewer code errors</li>
       </ul>
 
-      <p>content</p>
-      <p>content</p>
-      <p>content</p>
-      <p>content</p>
+
+      <h2>Installation</h2>
+
+      <p>To install on any Linux, Mac OS or Windows system, ensure <a href="https://nodejs.org/">Node.js</a> is installed then clone the repository:</p>
+
+      <pre><code>git clone https://github.com/craigbuckler/gulp-css.git</code></pre>
+
+      <p>Navigate to the folder:</p>
+
+      <pre><code>cd gulp-css</code></pre>
+
+      <p>Install dependencies:</p>
+
+      <pre><code>npm i gulp-cli -g
+npm i</code></pre>
+
+
+      <h2>Folders</h2>
+
+      <p>A demonstration <code>index.html</code> file is provided in the root folder. Other folders and files:</p>
+
+      <ul class="linklist">
+        <li><code>src</code> source files</li>
+        <li><code>src/images</code> image files</li>
+        <li><code>src/scss</code> Sass partials</li>
+        <li><code>build</code> compiled files (created on first build)</li>
+      </ul>
+
+
+      <h2>Development usage</h2>
+
+      <p>Run in live-reloading development mode:</p>
+
+      <pre><code>gulp</code></pre>
+
+      <p>Navigate to <a href="http://localhost:8000/">http://localhost:8000/</a> or the <strong>External</strong> URL reported if accessing from another device.</p>
+
+
+      <h2>Production build</h2>
+
+      <p>To build final minified files, set the <code>NODE_ENV</code> environment variable to <code>production</code> before running the <code>gulp css</code> task. On Linux or Mac OS:</p>
+
+      <pre><code>NODE_ENV=production
+gulp css</code></pre>
+
+      <p>(Alternatively, run inline using <code>NODE_ENV=production gulp css</code>)</p>
+
+      <p>Windows Powershell:</p>
+
+      <pre><code>$env:NODE_ENV="production"
+gulp css</code></pre>
+
+      <p>Windows legacy command line:</p>
+
+      <pre><code>set NODE_ENV=production
+gulp css</code></pre>
+
+
+      <h2>Modules used</h2>
+
+      <p>The following Gulp.js modules/plugins have been used:</p>
+
+      <ul class="linklist">
+        <li><a href="https://www.npmjs.com/package/gulp">gulp</a> task runner</li>
+        <li><a href="https://www.npmjs.com/package/gulp-noop">gulp-noop</a> no operation</li>
+        <li><a href="https://www.npmjs.com/package/gulp-newer">gulp-newer</a> pass newer files</li>
+        <li><a href="https://www.npmjs.com/package/gulp-imagemin">gulp-imagemin</a> minify images</li>
+        <li><a href="https://www.npmjs.com/package/gulp-sass">gulp-sass</a> CSS pre-processor</li>
+        <li><a href="https://www.npmjs.com/package/gulp-postcss">gulp-postcss</a> CSS post-processor</li>
+        <li><a href="https://www.npmjs.com/package/gulp-sourcemaps">gulp-sourcemaps</a> inline sourcemaps</li>
+        <li><a href="https://www.npmjs.com/package/gulp-size">gulp-size</a> file size reporting</li>
+      </ul>
+
+      <p>The following <a href="https://postcss.org/">PostCSS</a> plugins have been used:</p>
+
+      <ul class="linklist">
+        <li><a href="https://www.npmjs.com/package/postcss-assets">postcss-assets</a> image information and inlining</li>
+        <li><a href="https://www.npmjs.com/package/autoprefixer">autoprefixer</a> add vendor prefixes</li>
+        <li><a href="https://www.npmjs.com/package/usedcss">usedcss</a> remove unused CSS selectors</li>
+        <li><a href="https://www.npmjs.com/package/cssnano">cssnano</a> CSS code minification</li>
+      </ul>
 
     </article>
 
@@ -43,7 +122,11 @@
 
   <footer>
 
-    <p>footer</p>
+    <p>Developed by <a href="https://twitter.com/craigbuckler">Craig Buckler</a></p>
+
+    <p>and featured on <a href="https://www.sitepoint.com/">SitePoint.com</a></p>
+
+    <p>Please use all code and techniques as you wish!</p>
 
   </footer>
 

@@ -32,7 +32,8 @@
     "gulp-sass": "4.0.1",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "2.6.4",
-    "postcss-assets": "5.0.0"
+    "postcss-assets": "5.0.0",
+    "usedcss": "1.0.7"
   },
   "devDependencies": {
     "browser-sync": "2.24.5"

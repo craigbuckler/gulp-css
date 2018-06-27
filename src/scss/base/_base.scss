@@ -13,8 +13,67 @@ body {
   background-color: $color-back;
 }
 
-h1 {
-  font-size: 2rem;
+h1, h2 {
+  font-size: 2em;
   font-weight: 500;
-  margin: 1.5em 0;
+  margin: 1.8em 0 0 0;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  margin: 1em 0 0 0;
+}
+
+h1 + p, h2 + p {
+  margin-top: 0.25em;
+}
+
+ul {
+  list-style-type: square;
+  padding: 0;
+  margin: 1em 0 1.5em 3em;
+}
+
+li {
+  padding: 0;
+  margin: 0.6em 0;
+}
+
+pre {
+  white-space: pre;
+  padding: 0.2em 0.4em;
+  margin: 1em 0 1.5em 3em;
+  background-color: $color-code;
+  border-radius: 0.2em;
+  overflow-x: auto;
+}
+
+code {
+  font-family: $font-code;
+  font-size: 1em;
+  background-color: $color-code;
+  border-radius: 0.2em;
+}
+
+strong {
+  font-weight: 600;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.3em;
+}
+
+a:link, a:visited {
+  font-weight: 400;
+  text-decoration: none;
+  color: $color-link;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  color: $color-hovr;
 }
