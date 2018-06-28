@@ -24,8 +24,7 @@
     sass          = require('gulp-sass'),
     postcss       = require('gulp-postcss'),
     sourcemaps    = devBuild ? require('gulp-sourcemaps') : null,
-
-    browsersync   = require('browser-sync').create();
+    browsersync   = devBuild ? require('browser-sync').create() : null;
 
 
   console.log('Gulp', devBuild ? 'development' : 'production', 'build');
@@ -112,7 +111,6 @@
       index     : 'index.html'
     },
     port        : 8000,
-    files       : dir.build + '**/*',
     open        : false
   };
 

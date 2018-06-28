@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/craigbuckler/gulp-css#readme",
   "dependencies": {
-    "autoprefixer": "8.6.3",
+    "autoprefixer": "8.6.4",
     "cssnano": "3.10.0",
     "gulp": "3.9.1",
     "gulp-imagemin": "4.1.0",
@@ -30,7 +30,7 @@
     "gulp-noop": "1.0.0",
     "gulp-postcss": "7.0.1",
     "gulp-sass": "4.0.1",
-    "gulp-size": "^3.0.0",
+    "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.4",
     "postcss-assets": "5.0.0",
     "usedcss": "1.0.7"
