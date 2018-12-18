@@ -2,7 +2,7 @@
 
   'use strict';
 
-  /**************** Gulp.js configuration ****************/
+  /**************** Gulp.js 4 configuration ****************/
 
   const
 
