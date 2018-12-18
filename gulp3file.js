@@ -33,13 +33,11 @@
 
   /**************** clean task ****************/
 
-  function clean() {
+  gulp.task('clean', () => {
 
-    return del([ dir.build ]);
+    del([ dir.build ]);
 
-  }
-  exports.clean = clean;
-  exports.wipe = clean;
+  });
 
 
   /**************** images task ****************/
@@ -53,16 +51,15 @@
     }
   };
 
-  function images() {
+  gulp.task('images', () =>
 
-    return gulp.src(imgConfig.src)
+    gulp.src(imgConfig.src)
       .pipe(newer(imgConfig.build))
       .pipe(imagemin(imgConfig.minOpts))
       .pipe(size({ showFiles:true }))
-      .pipe(gulp.dest(imgConfig.build));
+      .pipe(gulp.dest(imgConfig.build))
 
-  }
-  exports.images = images;
+  );
 
 
   /**************** CSS task ****************/
@@ -102,22 +99,21 @@
 
   }
 
-  function css() {
+  gulp.task('css', ['images'], () =>
 
-    return gulp.src(cssConfig.src)
+    gulp.src(cssConfig.src)
       .pipe(sourcemaps ? sourcemaps.init() : noop())
       .pipe(sass(cssConfig.sassOpts).on('error', sass.logError))
       .pipe(postcss(cssConfig.postCSS))
       .pipe(sourcemaps ? sourcemaps.write() : noop())
       .pipe(size({ showFiles:true }))
       .pipe(gulp.dest(cssConfig.build))
-      .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
+      .pipe(browsersync ? browsersync.reload({ stream: true }) : noop())
 
-  }
-  exports.css = gulp.series(images, css);
+  );
 
 
-  /**************** server task (now private) ****************/
+  /**************** server task ****************/
 
   const syncConfig = {
     server: {
@@ -129,28 +125,22 @@
   };
 
   // browser-sync
-  function server(done) {
-    if (browsersync) browsersync.init(syncConfig);
-    done();
-  }
+  gulp.task('server', () =>
+    browsersync ? browsersync.init(syncConfig) : null
+  );
 
 
   /**************** watch task ****************/
 
-  function watch(done) {
+  gulp.task('default', ['css', 'server'], () => {
 
     // image changes
-    gulp.watch(imgConfig.src, images);
+    gulp.watch(imgConfig.src, ['images']);
 
     // CSS changes
-    gulp.watch(cssConfig.watch, css);
+    gulp.watch(cssConfig.watch, ['css']);
 
-    done();
+  });
 
-  }
-
-  /**************** default task ****************/
-
-  exports.default = gulp.series(exports.css, watch, server);
 
 })();
