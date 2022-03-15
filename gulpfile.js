@@ -22,7 +22,7 @@
     newer         = require('gulp-newer'),
     size          = require('gulp-size'),
     imagemin      = require('gulp-imagemin'),
-    sass          = require('gulp-sass'),
+    sass          = require('gulp-sass')(require('sass')),
     postcss       = require('gulp-postcss'),
     sourcemaps    = devBuild ? require('gulp-sourcemaps') : null,
     browsersync   = devBuild ? require('browser-sync').create() : null;
@@ -74,7 +74,7 @@
     build       : dir.build + 'css/',
     sassOpts: {
       sourceMap       : devBuild,
-      outputStyle     : 'nested',
+      outputStyle     : 'compressed',
       imagePath       : '/images/',
       precision       : 3,
       errLogToConsole : true
